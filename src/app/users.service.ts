@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-
 import { User } from './user';
 
 const httpOptions = {
@@ -24,5 +23,8 @@ export class UsersService {
 
   getUser(id: string): Observable<User> {
     return this.http.get<User>(`${this.url}/${id}`);
+  }
+  createUser(user: User): Observable<User> {
+    return this.http.post<User>(this.url, user, httpOptions);
   }
 }
