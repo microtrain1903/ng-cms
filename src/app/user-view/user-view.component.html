@@ -9,6 +9,6 @@
     <strong>Email:</strong> {{ user.email }}
   </div>
 
-  <button [routerLink]="['/users/edit/', user._id]">Edit</button>
-  <button>Delete</button>
+  <button mat-raised-button color="primary" [routerLink]="['/users/edit/', user._id]">Edit</button>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  <button mat-raised-button color="primary" (click)="deleteUser(user._id)">Delete</button>
 </div>

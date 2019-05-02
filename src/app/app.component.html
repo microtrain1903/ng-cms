@@ -1,3 +1,8 @@
-<button [routerLink]="['/users']">All Users</button>
-<button [routerLink]="['/users/create']">Create User</button>
+<nav>
+<button mat-raised-button color="primary" [routerLink]="['/users']">All Users</button>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<button mat-raised-button color="primary" [routerLink]="['/users/create']">Create User</button>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<button mat-raised-button color="primary" [routerLink]="['/articles']">Articles</button>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<button mat-raised-button color="primary" [routerLink]="['/article/create']">Create Article</button>
+</nav>
+
 <router-outlet></router-outlet>

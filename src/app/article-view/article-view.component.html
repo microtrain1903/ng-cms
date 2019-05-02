@@ -1,0 +1,11 @@
+<div *ngIf="article">
+  <h1>{{ article.title }}</h1>
+    <div>
+      <strong>Keywords:</strong> {{ article.keywords }}
+    </div>
+    <div>
+        <strong>Body:</strong> {{ article.body }}
+    </div>
+  <button mat-raised-button color="primary" [routerLink]="['/article/edit/', article.slug]">Edit</button>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  <button mat-raised-button color="primary" (click)="deleteArticle(article.slug)">Delete</button>
+</div>
