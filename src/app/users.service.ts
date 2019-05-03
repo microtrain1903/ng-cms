@@ -13,8 +13,10 @@ const httpOptions = {
 })
 export class UsersService {
 
+  //Set up the URL
   private url: string = 'http://localhost:3000/api/users';
-
+  private urlAuth: string = 'http://localhost:3000/api/auth/login';
+  //Call the HttpClinet in the Constructor
   constructor(private http: HttpClient) { }
 
   getUsers():Observable<User[]>{
@@ -35,6 +37,10 @@ export class UsersService {
 
   deleteUser(id: string): Observable<User> {
     return this.http.delete<User>(`${this.url}/${id}`);
+  }
+
+  logIn(user: User): Observable<User>{
+    return this.http.post<User>(this.urlAuth, user, httpOptions);
   }
 
 }

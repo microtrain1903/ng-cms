@@ -8,6 +8,9 @@ import { MatCardModule } from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
+import { UsersService } from './users.service';
+import { ArticlesService } from './articles.service';
+
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,12 +30,12 @@ import { AuthComponent } from './auth/auth.component';
     UserViewComponent,
     UserCreateComponent,
     UserEditComponent,
+    AuthComponent,
     ArticlesComponent,
     ArticleViewComponent,
     ArticleEditComponent,
     ArticleCreateComponent,
-    ArticleEditComponent,
-
+    ArticleEditComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,7 @@ import { AuthComponent } from './auth/auth.component';
     MatToolbarModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [UsersService, ArticlesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
