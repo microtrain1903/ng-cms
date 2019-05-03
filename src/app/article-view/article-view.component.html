@@ -6,6 +6,10 @@
     <div>
         <strong>Body:</strong> {{ article.body }}
     </div>
-  <button mat-raised-button color="primary" [routerLink]="['/article/edit/', article.slug]">Edit</button>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-  <button mat-raised-button color="primary" (click)="deleteArticle(article.slug)">Delete</button>
+    <div>
+      <strong>Created Date:</strong> {{ article.created }}
+  </div>
+  <br>
+<button mat-raised-button color="primary" [routerLink]="['/article/edit/', article._id]">Edit</button>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  <button mat-raised-button color="primary" (click)="deleteArticle(article._id)">Delete</button>
 </div>

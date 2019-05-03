@@ -4,25 +4,26 @@
 
   <div class="error" *ngIf="errorMessage">{{ errorMessage}}</div>
 
+  <mat-label for="title">Title</mat-label><br>
   <mat-form-field appearance="fill">
-    <mat-label for="title">Title</mat-label>
     <input matInput placeholder [(ngModel)]="article.title" name="title" id="title" type="text">
     <div class="error" *ngIf="errors.title">{{ errors.title.message}}</div>
   </mat-form-field>
 
+  <mat-label for="keywords">Keywords</mat-label>
   <mat-form-field appearance="fill">
-      <mat-label for="keywords">Keywords</mat-label>
       <input matInput [(ngModel)]="article.keywords" name="keywords" id="keywords" type="text">
       <div class="error" *ngIf="errors.keywords">{{ errors.keywords.message}}</div>
   </mat-form-field>
 
+  <mat-label for="body">Body</mat-label>
   <mat-form-field appearance="fill">
-      <mat-label for="body">Body</mat-label>
       <input matInput [(ngModel)]="article.body" name="body" id="body" type="text">
       <div class="error" *ngIf="errors.body">{{ errors.body.message}}</div>
   </mat-form-field>
 <br>
 <br>
-  <button mat-raised-button color="primary" type="submit">Submit</button>
+
+<button mat-raised-button color="primary" type="submit">Submit</button>
 
 </form>

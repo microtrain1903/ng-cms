@@ -8,7 +8,10 @@ import { Article } from '../article';
 @Component({
   selector: 'app-article-create',
   templateUrl: './article-create.component.html',
-  styleUrls: ['./article-create.component.scss']
+  styleUrls: [
+    './article-create.component.scss',
+    '../user-create/user-create.component.scss'
+  ]
 })
 export class ArticleCreateComponent implements OnInit {
 
@@ -23,25 +26,26 @@ export class ArticleCreateComponent implements OnInit {
 
   ngOnInit(): void{}
 
-  onSubmit(): void{
-    console.log(this.article);
-    this.articlesService.createArticle(this.article).subscribe(
-      (response:any)=>{
-        this.response(response);
-      }
-    )
-  }
   response(response:any): void{
+
     if(response.success===false){
       this.errors = response.error.errors;
-      this.errorMessage = response.error.message;
-
-      console.log(this.errors);
-      console.log(this.errorMessage);
+      this.errorMessage = response.error._message;
     }
 
     if(response.success===true){
-      this.router.navigate(['/article/view/', response.article.slug]);
+      this.router.navigate(['/articles']);
     }
   }
+
+  onSubmit(): void{
+
+    this.articlesService.createArticle(this.article).subscribe(
+      (response:any) => {
+        this.response(response);
+      }
+    );
+  }
+
+
 }

@@ -8,7 +8,7 @@ import { UserEditComponent } from './user-edit/user-edit.component';
 import { ArticlesComponent }   from './articles/articles.component';
 import { ArticleViewComponent }   from './article-view/article-view.component';
 import { ArticleCreateComponent }   from './article-create/article-create.component';
-//import { ArticleDeleteComponent } from './article-delete/article-delete.component';
+import { ArticleEditComponent } from './article-edit/article-edit.component';
 
 const routes: Routes = [
   { path:'', redirectTo: '/users', pathMatch: 'full' },
@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'articles', component: ArticlesComponent },
   { path: 'article/view/:slug', component: ArticleViewComponent },
   { path: 'article/create', component: ArticleCreateComponent },
-//  { path: 'articles/delete/:id', component: ArticleDeleteComponent },
+  { path: 'article/edit/:id', component: ArticleEditComponent },
 ];
 
 @NgModule({

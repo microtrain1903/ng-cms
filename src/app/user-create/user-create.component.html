@@ -4,26 +4,26 @@
 
   <div class="error" *ngIf="errorMessage">{{ errorMessage}}</div>
 
+  <mat-label for="username">Username</mat-label>
   <mat-form-field appearance="fill">
-    <mat-label for="username">Username</mat-label>
     <input matInput placeholder [(ngModel)]="user.username" name="username" id="username" type="text">
     <div class="error" *ngIf="errors.username">{{ errors.username.message}}</div>
   </mat-form-field>
 
+  <mat-label for="email">Email</mat-label>
   <mat-form-field appearance="fill">
-      <mat-label for="email">Email</mat-label>
       <input matInput placeholder [(ngModel)]="user.email" name="email" id="email" type="text">
       <div class="error" *ngIf="errors.email">{{ errors.email.message}}</div>
   </mat-form-field>
 
+  <mat-label for="first_name">First Name</mat-label>
   <mat-form-field appearance="fill">
-      <mat-label for="first_name">First Name</mat-label>
       <input matInput [(ngModel)]="user.first_name" name="first_name" id="first_name" type="text">
       <div class="error" *ngIf="errors.first_name">{{ errors.first_name.message}}</div>
   </mat-form-field>
 
+  <mat-label for="last_name">Last Name</mat-label>
   <mat-form-field appearance="fill">
-      <mat-label for="last_name">Last Name</mat-label>
       <input matInput [(ngModel)]="user.last_name" name="last_name" id="last_name" type="text">
       <div class="error" *ngIf="errors.last_name">{{ errors.last_name.message}}</div>
   </mat-form-field>
